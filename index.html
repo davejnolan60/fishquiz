@@ -1,0 +1,80 @@
+// HTML Structure
+const html = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSW Spearfishing Fish ID Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="start-screen">
+            <h1>NSW Spearfishing Fish Identification Quiz</h1>
+            <p>Test your knowledge of fish species found in New South Wales waters!</p>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div class="header">
+                <h2>NSW Spearfishing Fish ID Quiz</h2>
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div class="quiz-stats">
+                    <span id="question-counter">Question <span id="current-question">1</span> of <span id="total-questions">10</span></span>
+                    <span id="score-display">Score: <span id="current-score">0</span></span>
+                </div>
+            </div>
+
+            <div id="question-container">
+                <h3 id="question-text">Which fish species is shown in the image?</h3>
+                <div id="fish-image-container">
+                    <img id="fish-image" src="" alt="Fish image">
+                </div>
+                <div id="options-container">
+                    <!-- Options will be populated here -->
+                </div>
+            </div>
+
+            <div id="feedback-container" class="hidden">
+                <div id="result-message"></div>
+                <div id="fish-info">
+                    <h4 id="fish-name"></h4>
+                    <div id="fish-details">
+                        <div class="detail-section">
+                            <h5>Key Identifying Features:</h5>
+                            <ul id="key-features"></ul>
+                        </div>
+                        <div class="detail-section">
+                            <h5>NSW Regulations & Tips:</h5>
+                            <ul id="regulations"></ul>
+                        </div>
+                    </div>
+                </div>
+                <button id="next-btn">Next Question</button>
+            </div>
+        </div>
+
+        <div id="results-screen" class="hidden">
+            <h2>Quiz Complete!</h2>
+            <div id="final-score-container">
+                <p>Your Score: <span id="final-score">0</span> out of <span id="max-score">10</span></p>
+                <div id="score-message"></div>
+            </div>
+            <div id="results-breakdown">
+                <h3>Your Results:</h3>
+                <div id="results-list"></div>
+            </div>
+            <div class="button-container">
+                <button id="retry-btn">Retry Quiz</button>
+                <button id="share-btn">Share Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+`;

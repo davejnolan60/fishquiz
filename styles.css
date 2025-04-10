@@ -1,0 +1,285 @@
+// CSS Styles
+const css = `
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Start Screen */
+#start-screen {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#start-screen h1 {
+    color: #0077cc;
+    margin-bottom: 20px;
+}
+
+#start-screen p {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Quiz Screen */
+.header {
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    color: #0077cc;
+    margin-bottom: 15px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.quiz-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #666;
+}
+
+#question-container {
+    margin-bottom: 20px;
+}
+
+#question-text {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#fish-image-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#fish-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.option {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option:hover {
+    border-color: #0077cc;
+    background-color: #f0f7ff;
+}
+
+.option.selected {
+    border-color: #0077cc;
+    background-color: #e6f3ff;
+}
+
+.option.correct {
+    border-color: #4caf50;
+    background-color: #e8f5e9;
+}
+
+.option.incorrect {
+    border-color: #f44336;
+    background-color: #ffebee;
+}
+
+/* Feedback Container */
+#feedback-container {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+#result-message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#result-message.correct {
+    color: #4caf50;
+}
+
+#result-message.incorrect {
+    color: #f44336;
+}
+
+#fish-info {
+    margin-bottom: 20px;
+}
+
+#fish-name {
+    font-size: 22px;
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+#fish-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    #fish-details {
+        grid-template-columns: 1fr;
+    }
+
+    #options-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-section {
+    margin-bottom: 15px;
+}
+
+.detail-section h5 {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.detail-section ul {
+    padding-left: 20px;
+}
+
+.detail-section li {
+    margin-bottom: 5px;
+}
+
+#next-btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Results Screen */
+#results-screen {
+    text-align: center;
+    padding: 20px;
+}
+
+#results-screen h2 {
+    color: #0077cc;
+    margin-bottom: 20px;
+}
+
+#final-score-container {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+#score-message {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+}
+
+#results-breakdown {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#results-breakdown h3 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.result-indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.result-indicator.correct {
+    background-color: #4caf50;
+}
+
+.result-indicator.incorrect {
+    background-color: #f44336;
+}
+
+.result-text {
+    flex-grow: 1;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+`;
