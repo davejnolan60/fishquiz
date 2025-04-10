@@ -1,5 +1,22 @@
 const js = `
 // Quiz data
+// Add this at the beginning of your script.js
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOM loaded");
+  
+  // Test start button functionality
+  const startBtn = document.getElementById('start-btn');
+  if (startBtn) {
+    console.log("Start button found");
+    startBtn.addEventListener('click', function() {
+      console.log("Start button clicked");
+      document.getElementById('start-screen').classList.add('hidden');
+      document.getElementById('quiz-screen').classList.remove('hidden');
+    });
+  } else {
+    console.log("Start button not found!");
+  }
+});
 const quizData = [
     {
         question: "Which fish species is shown in the image?",
